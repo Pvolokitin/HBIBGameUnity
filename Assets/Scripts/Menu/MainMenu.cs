@@ -8,10 +8,10 @@ public class MainMenu : MonoBehaviour
     public void Play(int index)
     {
         SceneManager.LoadScene(index);
-    }       //  Кнопка Играть
+    }       //  button Play
 
     public void Exit()
     {
         Application.Quit();
-    }       // Кнопка Выход из игры
+    }       // button Exit
 }

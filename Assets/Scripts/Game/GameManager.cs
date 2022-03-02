@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI timer;
 
-    public GameObject GameOverScreen;
+    public GameObject GameOverScreen;       // Game Over Screen
     public BallController Ball;
 
     public bool isGameActive;
@@ -27,39 +27,39 @@ public class GameManager : MonoBehaviour
 
     public void Update()
     {
-        score = Ball.pointValue;
-        UpdateScore();
-        if (isGameActive)
+        score = Ball.pointValue;    // Getting poinValue for score
+        UpdateScore();      // Update score
+        if (isGameActive)   // if game is active
         {
-            TimerOfGame();
+            TimerOfGame();  // Use timer of game
         }
         GameOver();
     }
 
     void GameOver()
     {
-        if (!isGameActive)
+        if (!isGameActive)      // if game is not active
         {
-            GameOverScreen.SetActive(true);
+            GameOverScreen.SetActive(true);     // switch on game over screen
         }
-    }       //  Конец игры
+    }       
 
 
     public void RestartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }               //  Кнопка рестарт игры
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);         //  button Restart
+    }                
     public void ExitToMenu(int index)
     {
-        SceneManager.LoadScene(index);
-    }       //  Кнопка выйти в главное меню
+        SceneManager.LoadScene(index);      //  Button Menu
+    }       
 
 
     void UpdateScore()
-    {
-        
+    {       
         scoreText.text = "Score:" + score.ToString();
-    }               // Работа с текстом счета
+    }               
+
 
     public void TimerOfGame()
     {
@@ -69,5 +69,5 @@ public class GameManager : MonoBehaviour
         {
             isGameActive = false;
         }
-    }       // Работа с текстом Обратный отсчет
+    }       
 }
